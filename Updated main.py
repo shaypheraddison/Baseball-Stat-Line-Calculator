@@ -19,11 +19,12 @@ def slg():
     return (single + (double * 2) + (triple * 3) + (home_run * 4)) / ab
 def ops():
     return obp() + slg()
-print(f"The batting average is: = {avg():.3f}")
-print(f"The on-base percentage is: = {obp():.3f}")
-print(f"The slugging percentage is: = {slg():.3f}")
-print(f"The on-base + slugging percentage is: = {ops():.3f}")
-print(f"The final slash line is: = {avg():.3f}/{obp():.3f}/{slg():.3f}/{ops():.3f}")
+
+print(f"The batting average is: {avg():.3f}")
+print(f"The on-base percentage is: {obp():.3f}")
+print(f"The slugging percentage is: {slg():.3f}")
+print(f"The on-base + slugging percentage is: {ops():.3f}")
+print(f"The final slash line is: {avg():.3f}/{obp():.3f}/{slg():.3f}/{ops():.3f}")
 
 
 
