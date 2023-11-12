@@ -1,6 +1,9 @@
 def get_input(stat):
     return float(input("How many " + stat))
 
+list = ["hits" , "at bats" , "walks" , "hit-by-pitches" , "sacrifice fly's" , "singles" , "doubles" , "triples" , "home runs"]
+get_input((print[0])
+
 hits = get_input("hits?: ")
 ab = get_input("at-bats?: ")
 bb = get_input("walks?: ")
