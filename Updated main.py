@@ -1,3 +1,5 @@
+
+
 def get_input(stat):
     return float(input("How many " + stat + "?: "))
 
