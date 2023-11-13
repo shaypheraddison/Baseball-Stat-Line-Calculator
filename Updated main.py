@@ -1,32 +1,24 @@
+stat_list = ["hits" , "at bats" , "walks" , "hit-by-pitches" , "sacrifice fly's" , "singles" , "doubles" , "triples" , "home runs"]
+stat = 0
+while stat < len(stat_list):
+    stat_input = int(input("How many " + stat_list[stat] + "?: ").split())
+    stat += 1
 
 
-def get_input(stat):
-    return float(input("How many " + stat + "?: "))
+def average():
+    return stat_list[0] / stat_list[1]
+def on_base_percent():
+    return stat_list[3] + stat_list[0] + stat_list[2] / stat_list[1] + stat_list[3] + stat_list[2] + stat_list[4]
+def slugging():
+    return input(stat_list[5]) + (input(stat_list[6] * 2)) + (input(stat_list[7] * 3)) + (input(stat_list[8] * 4)) / stat_list[1]
+def on_base_plus_slugg():
+    return on_base_percent() + slugging()
 
-hits = get_input("hits")
-ab = get_input("at-bats")
-bb = get_input("walks")
-hbp = get_input("hit-by-pitches")
-sac_fly = get_input("sacrifice fly's")
-single = get_input("singles")
-double = get_input("doubles")
-triple = get_input("triples")
-home_run = get_input("home runs")
-
-def avg():
-    return hits/ab
-def obp():
-    return (hbp + hits + bb) / (ab + hbp + bb + sac_fly)
-def slg():
-    return (single + (double * 2) + (triple * 3) + (home_run * 4)) / ab
-def ops():
-    return obp() + slg()
-
-print(f"The batting average is: {avg():.3f}")
-print(f"The on-base percentage is: {obp():.3f}")
-print(f"The slugging percentage is: {slg():.3f}")
-print(f"The on-base + slugging percentage is: {ops():.3f}")
-print(f"The final slash line is: {avg():.3f}/{obp():.3f}/{slg():.3f}/{ops():.3f}")
+print(f"The batting average is: {average():.3f}")
+print(f"The on-base percentage is: {on_base_percent():.3f}")
+print(f"The slugging percentage is: {slugging():.3f}")
+print(f"The on-base + slugging percentage is: {on_base_plus_slugg():.3f}")
+print(f"The final slash line is: {average():.3f}/{on_base_percent():.3f}/{slugging():.3f}/{on_base_percent():.3f}")
 
 
 
