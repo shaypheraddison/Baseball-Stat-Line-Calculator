@@ -1,15 +1,15 @@
 def get_input(stat):
-    return float(input("How many " + stat))
+    return float(input("How many " + stat + "?: "))
 
-hits = get_input("hits?: ")
-ab = get_input("at-bats?: ")
-bb = get_input("walks?: ")
-hbp = get_input("hit-by-pitches?: ")
-sac_fly = get_input("sacrifice fly's?: ")
-single = get_input("singles?: ")
-double = get_input("doubles?: ")
-triple = get_input("triples?: ")
-home_run = get_input("home runs?: ")
+hits = get_input("hits")
+ab = get_input("at-bats")
+bb = get_input("walks")
+hbp = get_input("hit-by-pitches")
+sac_fly = get_input("sacrifice fly's")
+single = get_input("singles")
+double = get_input("doubles")
+triple = get_input("triples")
+home_run = get_input("home runs")
 
 def avg():
     return hits/ab
