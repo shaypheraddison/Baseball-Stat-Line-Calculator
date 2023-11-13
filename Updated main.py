@@ -1,7 +1,7 @@
 stat_list = ["hits" , "at bats" , "walks" , "hit-by-pitches" , "sacrifice fly's" , "singles" , "doubles" , "triples" , "home runs"]
 stat = 0
 while stat < len(stat_list):
-    stat_input = int(input("How many " + stat_list[stat] + "?: ").split())
+    stat_input = input("How many " + stat_list[stat] + "?: ").split()
     stat += 1
 
 
@@ -14,10 +14,7 @@ def slugging():
 def on_base_plus_slugg():
     return on_base_percent() + slugging()
 
-print(f"The batting average is: {average():.3f}")
-print(f"The on-base percentage is: {on_base_percent():.3f}")
-print(f"The slugging percentage is: {slugging():.3f}")
-print(f"The on-base + slugging percentage is: {on_base_plus_slugg():.3f}")
+
 print(f"The final slash line is: {average():.3f}/{on_base_percent():.3f}/{slugging():.3f}/{on_base_percent():.3f}")
 
 
