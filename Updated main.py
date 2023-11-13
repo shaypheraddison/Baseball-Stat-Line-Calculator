@@ -10,7 +10,7 @@ def average():
 def on_base_percent():
     return stat_list[3] + stat_list[0] + stat_list[2] / stat_list[1] + stat_list[3] + stat_list[2] + stat_list[4]
 def slugging():
-    return input(stat_list[5]) + (input(stat_list[6] * 2)) + (input(stat_list[7] * 3)) + (input(stat_list[8] * 4)) / stat_list[1]
+    return stat_list[5] + (stat_list[6] * 2) + (stat_list[7] * 3) + (stat_list[8] * 4) / stat_list[1]
 def on_base_plus_slugg():
     return on_base_percent() + slugging()
 
