@@ -36,7 +36,7 @@ def calculate_ops(hits, walks, hit_by_pitch, at_bats, sacrifice_flies, singles, 
     slg = calculate_slugging_percentage(singles, doubles, triples, home_runs, at_bats)
     return obp + slg
 
-def calculate_and_display_slash_line(stats):
+def calculate_stats(stats):
     batting_average = calculate_batting_average(stats["hits"], stats["at_bats"])
     on_base_percentage = calculate_on_base_percentage(
         stats["hits"], stats["walks"], stats["hit_by_pitch"], stats["at_bats"], stats["sacrifice_flies"]
@@ -49,11 +49,22 @@ def calculate_and_display_slash_line(stats):
         stats["sacrifice_flies"], stats["singles"], stats["doubles"], stats["triples"], stats["home_runs"]
     )
 
-    print(f"Batting Average: {batting_average:.3f}")
-    print(f"On-Base Percentage: {on_base_percentage:.3f}")
-    print(f"Slugging Percentage: {slugging_percentage:.3f}")
-    print(f"OPS: {ops:.3f}")
-    print(f"The final slash line is: {batting_average:.3f}/{on_base_percentage:.3f}/{slugging_percentage:.3f}/{ops:.3f}")
+    return {
+        'Batting Average': batting_average,
+        'On-Base Percentage': on_base_percentage,
+        'Slugging Percentage': slugging_percentage,
+        'OPS': ops
+    }
+
+def display_stats(stats):
+    print(f"Batting Average: {stats['Batting Average']:.3f}")
+    print(f"On-Base Percentage: {stats['On-Base Percentage']:.3f}")
+    print(f"Slugging Percentage: {stats['Slugging Percentage']:.3f}")
+    print(f"OPS: {stats['OPS']:.3f}")
+    print(f"The final slash line is: {stats['Batting Average']:.3f}/{stats['On-Base Percentage']:.3f}/{stats['Slugging Percentage']:.3f}/{stats['OPS']:.3f}")
 
 user_stats = get_user_input()
-calculate_and_display_slash_line(user_stats)
+
+calculated_stats = calculate_stats(user_stats)
+
+display_stats(calculated_stats)
